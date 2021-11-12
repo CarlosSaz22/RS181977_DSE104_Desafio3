@@ -1,0 +1,50 @@
+﻿@model RS181977_Desafio03.Models.Pedidos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar pedido</h2>
+
+<h3>
+    ¿Estás seguro de que quieres eliminar esto?
+</h3>
+<div>
+    <h4>Pedidos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.NombreProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a lista de pedidos", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model RS181977_Desafio03.Models.Pedidos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle de pedidos</h2>
+
+<div>
+    <h4>Pedidos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.NombreProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Regresar a lista de pedidos", "Index")
+</p>
